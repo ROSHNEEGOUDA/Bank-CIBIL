@@ -86,7 +86,7 @@ const Login = () => {
                                                 onChange={() => setRole('Manager')}
                                                 className="mr-2"
                                             />
-                                            Manager
+                                            Credit Manager
                                         </label>
                                     </div>
                                 </div>

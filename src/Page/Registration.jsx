@@ -59,7 +59,7 @@ const VolunteerRegistration = () => {
                         <select id="role" className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500">
                             <option value="">Select Role</option>
                             <option value="user">Bank</option>
-                            <option value="admin">Manager</option>
+                            <option value="admin">Credit Manager</option>
                         </select>
                     </div>
                     <div className="mb-5">

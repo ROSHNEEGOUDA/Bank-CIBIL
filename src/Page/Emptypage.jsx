@@ -1,5 +1,4 @@
 import React from "react";
-import Background from "../Background/Background";
 
 const Emptypage = () => {
     return (
@@ -10,7 +9,7 @@ const Emptypage = () => {
                     <strong>Empowering Banks, Enabling Businesses.</strong>
                 </p>
                 <p className="text-gray-600 mt-2">
-                    At <strong>Citi</strong>, we understand that <strong>small businesses and startups</strong> are the backbone of the economy. However, assessing their creditworthiness has always been a challenge due to limited credit history. That’s where our <strong>AI-powered CIBIL Credit Scorer</strong> comes in—bringing innovation, accuracy, and financial inclusivity to loan approvals.
+                    At <strong>Bank Bank</strong>, we understand that <strong>small businesses and startups</strong> are the backbone of the economy. However, assessing their creditworthiness has always been a challenge due to limited credit history. That’s where our <strong>AI-powered CIBIL Credit Scorer</strong> comes in—bringing innovation, accuracy, and financial inclusivity to loan approvals.
                 </p>
 
                 <h2 className="text-xl font-semibold text-gray-800 mt-4">Why Choose Our Credit Scorer?</h2>
