@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 import { faUpload } from "@fortawesome/free-solid-svg-icons/faUpload";
 import TransitionAsset from "../components/TransitionAsset";
@@ -42,49 +42,54 @@ const HomePage = () => {
             <h1 className="text-2xl font-bold mb-6">Financial Information</h1>
 
             {/* Personal Information */}
-           <PersonalInfo/>
+            <PersonalInfo />
 
             {/* Income Information */}
-            <IncomeInfo/>
+            <IncomeInfo />
 
 
             {/* Utility Information */}
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
                 <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection('utility')}>
-                    <h2 className="text-xl font-bold">Utility Information<span className="text-red-700">*</span></h2>
-                    <span>{openSection === 'utility' ? "▲" : "▼"}</span>
+                    <h2 className="text-xl font-bold">
+                        Utility Information <span className="text-red-700">*</span>
+                    </h2>
+                    <span>{openSection === 'balance' ? "▲" : "▼"}</span>
                 </div>
+
                 {openSection === 'utility' && (
                     <div className="mt-4">
-                        {["Electricity", "Water"].map((field, i) => (
+                        {utilityFields.map((field, i) => (
                             <div key={i} className="mb-2">
                                 <label className="block font-bold mb-1">{field}:</label>
                                 <input type="text" className="w-full p-2 border rounded" placeholder={`Enter ${field}`} />
                             </div>
                         ))}
-                        <div className="mt-4">
+
+                        {/* Add New Utility Field */}
+                        <div className="mt-4 flex items-center space-x-2">
                             <input
                                 ref={inputRef}
                                 type="text"
-                                className="w-full p-2 border rounded mb-2"
+                                className="w-full p-2 border rounded"
                                 placeholder="Add new utility..."
                                 value={newUtility}
                                 onChange={handleInputChange}
                             />
                             <button
                                 type="button"
-                                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center"
                                 onClick={addUtilityField}
                             >
-                                Add Utility
+                                <FontAwesomeIcon icon={faPlus} className="mr-2" />
+                                Add
                             </button>
-
                         </div>
                     </div>
                 )}
             </div>
 
-            <TransitionAsset/>
+            <TransitionAsset />
 
             {/* Balance Sheet Upload */}
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
@@ -94,7 +99,7 @@ const HomePage = () => {
                 </div>
                 {openSection === 'balance' && (
                     <div className="mt-4">
-                        <label className="block font-bold mb-1">Upload File:</label>
+                        <label className="block font-bold mb-1"><FontAwesomeIcon icon={faUpload} className="mr-2" />Upload File:</label>
                         <input type="file" className="w-full p-2 border rounded" />
                     </div>
                 )}
