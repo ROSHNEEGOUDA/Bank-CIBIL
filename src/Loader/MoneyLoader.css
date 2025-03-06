@@ -1,0 +1,47 @@
+@keyframes fall {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .pulse-dollar {
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse 1.5s infinite;
+  }
+  
+  .coin {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: fall 2s infinite ease-in-out;
+  }
+  
+  .coin-1 { left: 10%; animation-delay: 0s; }
+  .coin-2 { left: 30%; animation-delay: 0.2s; }
+  .coin-3 { left: 50%; animation-delay: 0.4s; }
+  .coin-4 { left: 70%; animation-delay: 0.6s; }
+  .coin-5 { left: 90%; animation-delay: 0.8s; }
+  .coin-6 { left: 20%; animation-delay: 1s; }
+  .coin-7 { left: 40%; animation-delay: 1.2s; }
+  .coin-8 { left: 60%; animation-delay: 1.4s; }
+  .coin-9 { left: 80%; animation-delay: 1.6s; }
+  
